@@ -1,6 +1,6 @@
 # Default ignored files
 /build/
-/workspace.xml
+/.grade/
 # Editor-based HTTP Client requests
 /httpRequests/
 # Datasource local storage ignored files
