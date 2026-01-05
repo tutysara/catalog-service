@@ -41,6 +41,7 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-configuration-processor' // configuration props
     implementation 'org.springframework.cloud:spring-cloud-starter-config' // config server client
     implementation 'org.springframework.retry:spring-retry' // for config server retry
+    implementation 'org.springframework.boot:spring-boot-starter-actuator' // refresh endpoint setup
 
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }

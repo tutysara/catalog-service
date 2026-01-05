@@ -1,6 +1,19 @@
 spring:
   application:
     name: catalog-service
+  config:
+    import: "optional:configserver:"
+  cloud:
+    config:
+      uri: http://localhost:8888
+      request-connect-timeout: 5000
+      request-read-timeout: 5000
+      fail-fast: true
+      retry:
+        initial-interval: 1000
+        max-interval: 2000
+        max-attempts: 6
+        multiplier: 1.1
 
 server:
   port: 9001
@@ -13,3 +26,14 @@ server:
 
 polar:
   greeting: Welcome to the local book catalog!
+
+management:
+  endpoint:
+    refresh:
+      enabled: true
+    metrics:
+      access: unrestricted
+  endpoints:
+    web:
+      exposure:
+        include: "*"
