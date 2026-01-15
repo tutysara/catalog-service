@@ -43,6 +43,11 @@ dependencies {
     implementation 'org.springframework.retry:spring-retry' // for config server retry
     implementation 'org.springframework.boot:spring-boot-starter-actuator' // refresh endpoint setup
 
+    implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
+    testImplementation 'org.springframework.boot:spring-boot-starter-data-jdbc-test'
+
+    runtimeOnly 'org.postgresql:postgresql'
+
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 

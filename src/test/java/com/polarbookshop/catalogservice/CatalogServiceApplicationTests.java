@@ -22,7 +22,7 @@ class CatalogServiceApplicationTests {
     @Test
     void whenGetRequestWithIdThenBookReturned() {
         var bookIsbn = "1231231230";
-        var bookToCreate = new Book(bookIsbn, "Title", "Author", 9.90);
+        var bookToCreate = new Book(null , bookIsbn, "Title", "Author", 9.90, null, null, 0);
         Book expectedBook = webTestClient
                 .post()
                 .uri("/books")
