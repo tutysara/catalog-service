@@ -26,6 +26,8 @@ configurations {
 
 ext {
     set('springCloudVersion', "2025.1.0")
+    set('testcontainersVersion', "1.19.8") //echo api.version=1.44 >> ~/.docker-java.properties
+
 }
 
 dependencies {
@@ -47,6 +49,9 @@ dependencies {
     testImplementation 'org.springframework.boot:spring-boot-starter-data-jdbc-test'
 
     runtimeOnly 'org.postgresql:postgresql'
+    testImplementation 'org.springframework.boot:spring-boot-testcontainers'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.testcontainers:postgresql' // for test container instance
 
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
@@ -54,6 +59,8 @@ dependencies {
 dependencyManagement {
     imports {
         mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+        mavenBom "org.testcontainers:testcontainers-bom:${testcontainersVersion}"
+
     }
 }
 
