@@ -53,6 +53,9 @@ dependencies {
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.testcontainers:postgresql' // for test container instance
 
+    implementation 'org.springframework.boot:spring-boot-starter-flyway' // for flyway migrations
+    implementation 'org.flywaydb:flyway-database-postgresql'
+
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
